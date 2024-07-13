@@ -67,6 +67,7 @@ body {
 
 .tab:hover {
     background-color: #709edd;
+    
 }
 
 /* Modal Styles */
@@ -132,4 +133,7 @@ button {
 
 button:hover {
     background-color: #709edd;
+    transition:cubic-bezier(0.55, 0.085, 0.68, 0.53);
+    transition-duration: 500ms;
+    transition-delay: 50ms;
 }

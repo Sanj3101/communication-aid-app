@@ -3,42 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Communication Aid App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Communication Aid App</h1>
-        <button id="new-icon">Add New Icon</button>
-        <div class="tabs">
-            <button class="tab" onclick="showCategory('favorites')">Favorites</button>
-            <button class="tab" onclick="showCategory('all')">All</button>
-            <button class="tab" onclick="showCategory('food')">Food</button>
-            <button class="tab" onclick="showCategory('emotions')">Emotions</button>
-        </div>
-        <div id="icon-container"></div>
+    <div class="header">
+        Communication Aid App
     </div>
+    <div class="category-container" id="category-container">
+        <button onclick="showCategory('all')">All</button>
+        <button onclick="showCategory('favorites')">Favorites</button>
+    </div>
+    
+    
+    <button id="new-icon">Add New Icon</button>
+    <button id="add-category">Add New Category</button>
+    <div id="suggestions-container" class="suggestions-container">
+        <h2>Most Used Categories : </h2>
+        <div id="suggestions"></div>
+    </div>
+    <div id="icon-container" class="icon-container"></div>
 
-    <!-- New Icon Modal -->
     <div id="icon-modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Add New Icon</h2>
             <form id="icon-form">
                 <label for="category">Category:</label>
                 <select id="category" name="category" required>
-                    <option value="food">Food</option>
-                    <option value="emotions">Emotions</option>
-                    
+                    <!-- Categories will be populated here by JavaScript -->
                 </select>
-
                 <label for="image">Image:</label>
                 <input type="file" id="image" name="image" accept="image/*" required>
-
                 <label for="audio">Audio:</label>
                 <input type="file" id="audio" name="audio" accept="audio/*" required>
-
                 <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="category-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-category">&times;</span>
+            <form id="category-form">
+                <label for="new-category">New Category:</label>
+                <input type="text" id="new-category" name="new-category" required>
+                <button type="submit">Add Category</button>
             </form>
         </div>
     </div>
